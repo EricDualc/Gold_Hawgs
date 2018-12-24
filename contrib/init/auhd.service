@@ -1,0 +1,26 @@
+[Unit]
+Description=AUH's distributed currency daemon
+After=network.target
+
+[Service]
+User=auh
+Group=auh
+
+Type=forking
+PIDFile=/var/lib/auhd/auhd.pid
+
+ExecStart=/usr/bin/auhd -daemon -pid=/var/lib/auhd/auhd.pid \
+          -conf=/etc/auh/auh.conf -datadir=/var/lib/auhd
+
+ExecStop=-/usr/bin/auh-cli -conf=/etc/auh/auh.conf \
+         -datadir=/var/lib/auhd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

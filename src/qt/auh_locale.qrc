@@ -1,0 +1,17 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="ca">locale/auh_ca.qm</file>
+        <file alias="da">locale/auh_da.qm</file>
+        <file alias="de">locale/auh_de.qm</file>
+        <file alias="en">locale/auh_en.qm</file>
+        <file alias="en_US">locale/auh_en_US.qm</file>
+        <file alias="es">locale/auh_es.qm</file>
+        <file alias="fr_FR">locale/auh_fr_FR.qm</file>
+        <file alias="it">locale/auh_it.qm</file>
+        <file alias="ja">locale/auh_ja.qm</file>
+        <file alias="pt">locale/auh_pt.qm</file>
+        <file alias="ro_RO">locale/auh_ro_RO.qm</file>
+        <file alias="ru">locale/auh_ru.qm</file>
+        <file alias="zh_CN">locale/auh_zh_CN.qm</file>
+    </qresource>
+</RCC>

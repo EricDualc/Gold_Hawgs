@@ -1,0 +1,26 @@
+# /etc/conf.d/auhd: config file for /etc/init.d/auhd
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/auh/auh.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/auhd"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/auhd.pid"
+
+# Where to write auhd data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/auhd"
+
+# User and group to own auhd process
+#BITCOIND_USER="auh"
+#BITCOIND_GROUP="auh"
+
+# Path to auhd executable
+#BITCOIND_BIN="/usr/bin/auhd"
+
+# Nice value to run auhd under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
