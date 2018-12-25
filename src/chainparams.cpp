@@ -81,11 +81,11 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-            ( 0,   uint256("0x00000b3a5f0b0c0fc7cb290f44f353828fbaddbcc8e8c9e158117de52269f3e6"));
+            ( 0,   uint256("0x000003b057f273d1469d15192bfe56a63446ff0ce6d3b0ca63850305d153469f"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1545041572, // * UNIX timestamp of last checkpoint block
+    1545743862, // * UNIX timestamp of last checkpoint block
     1,     // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in UpdateTip debug.log lines)
     1000        // * estimated number of transactions per day after checkpoint
@@ -93,7 +93,7 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-        ( 0,   uint256("0x00000df738b681fb21b988e2c10664a3bcc732d044c715fd8430a86f8f55b02d") );
+        ( 0,   uint256("0x00000f26c62a81236315788cadef497d57e7a26c0aeb67918e18acd332f7d90f") );
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
     1537821001,
@@ -179,7 +179,7 @@ public:
         const char* pszTimestamp = "New Cryptocurrency - Auh - Eric"; // Input Activation code to activate blockchain
         CMutableTransaction txNew;
         txNew.nVersion = 1;
-        txNew.nTime = 1545041572;
+        txNew.nTime = 1545743862;
         txNew.nLockTime = 0;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -190,9 +190,9 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
         genesis.nVersion = 1;
-        genesis.nTime = 1545041572;
+        genesis.nTime = 1545743862;
         genesis.nBits = 0x1e0fffff;
-        genesis.nNonce = 1311179;
+        genesis.nNonce = 451310;
         genesis.hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // auh
         genesis.hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // auh
 
@@ -205,8 +205,8 @@ public:
 //        std::cout << genesis.GetHash().GetHex() << std::endl;
 //        std::cout << genesis.hashMerkleRoot.GetHex() << std::endl;
 
-        assert(consensus.hashGenesisBlock == uint256("0x00000b3a5f0b0c0fc7cb290f44f353828fbaddbcc8e8c9e158117de52269f3e6"));
-        assert(genesis.hashMerkleRoot == uint256("0x429a02acc5d197eec6a3b7ca1bb6f12e94a1bc2297f429a0d73f1e37c493827c"));
+        assert(consensus.hashGenesisBlock == uint256("0x000003b057f273d1469d15192bfe56a63446ff0ce6d3b0ca63850305d153469f"));
+        assert(genesis.hashMerkleRoot == uint256("0x932bc47f961c6fd83b4f9ef493fda6122d0cd1e15a4fb73fa6b4eaa2d55b354a"));
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
         vSeeds.push_back(CDNSSeedData("45.32.207.138", "45.32.207.138"));        // Main seed
@@ -214,7 +214,7 @@ public:
         vSeeds.push_back(CDNSSeedData("149.28.254.41", "149.28.254.41"));        // Main seed
         vSeeds.push_back(CDNSSeedData("144.202.74.207", "144.202.74.207"));        // Main seed
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,102); // AUH address start with 'i'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38); // AUH address start with 'i'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,63); // AUH script addresses start with 'S'
         base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1,155);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x07)(0x28)(0xA2)(0x4E).convert_to_container<std::vector<unsigned char> >();
@@ -236,7 +236,7 @@ public:
         strSporkKey = "04a983220ea7a38a7106385003fef77896538a382a0dcc389cc45f3c98751d9af423a097789757556259351198a8aaa628a1fd644c3232678c5845384c744ff8d7";
 
         strDarksendPoolDummyAddress = "WPH39L22MF15jRdP4Rni9K9GU1KQFpFBFe";
-        nStartMasternodePayments = 1545041572;
+        nStartMasternodePayments = 1545743862;
 
         nStakingRoundPeriod = 120; // 2 minutes a round
         nStakingInterval = 22;
@@ -309,7 +309,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1537821001;
         genesis.nBits = 0x1e0fffff;
-        genesis.nNonce = 1135789;
+        genesis.nNonce = 962364;
         genesis.hashStateRoot = uint256(h256Touint(dev::h256("e965ffd002cd6ad0e2dc402b8044de833e06b23127ea8c3d80aec91410771495"))); // auh
         genesis.hashUTXORoot = uint256(h256Touint(dev::sha3(dev::rlp("")))); // auh
 
@@ -327,8 +327,8 @@ public:
 
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256("0x00000df738b681fb21b988e2c10664a3bcc732d044c715fd8430a86f8f55b02d"));
-        assert(genesis.hashMerkleRoot == uint256("0x6aed4a986ae823c25e0690e6d58df2bf1df55b6cb874c9aa56d0c0c8ba326b23"));
+        assert(consensus.hashGenesisBlock == uint256("0x00000f26c62a81236315788cadef497d57e7a26c0aeb67918e18acd332f7d90f"));
+        assert(genesis.hashMerkleRoot == uint256("0x7c8f98c96efb70196575e27270dc20ca298d6c06dc56e6ed6467eb4abefe59b4"));
 
         //vFixedSeeds.clear();
         //vSeeds.clear();
@@ -540,7 +540,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1537821001;
         genesis.nBits = 0x1e0fffff;
-        genesis.nNonce = 1533044;
+        genesis.nNonce = 325333;
 
 //        while (!CheckProof(genesis.GetHash(), genesis.nBits)) {
 //            genesis.nNonce ++;
@@ -551,8 +551,8 @@ public:
 
         consensus.hashGenesisBlock = genesis.GetHash();
 
-        assert(consensus.hashGenesisBlock == uint256("0x000003d45bce8ed62ff874d98580889ece1d5cd192d9cdfde0917698f852ac07"));
-        assert(genesis.hashMerkleRoot == uint256("0xa5ec5f6b78239bfbf984042fca8c50394ec8b6b37dcfa38e5579a1da86b39d27"));
+        assert(consensus.hashGenesisBlock == uint256("0x0000017cd1ce182c0e98cb7f1eb0a897e567c8499ba82225bb627d04eafcaf21"));
+        assert(genesis.hashMerkleRoot == uint256("0x06a5522bec7fcea8690eda3d46098583473a3a57b606abe6420c76f9d15e1506"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,73); // AUH Start letter W
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,64);
