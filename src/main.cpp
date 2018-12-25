@@ -1776,9 +1776,17 @@ CAmount GetProofOfWorkReward(int64_t nFees, int nHeight)
     if (nHeight < 1) {
         nSubsidy = 1 * COIN;
     } else if (nHeight == 1) {
-        nSubsidy = 1000000 * COIN;
-    } else if (nHeight < 1000) {
-        nSubsidy = 8 * COIN;
+        nSubsidy = 16000000 * COIN;
+    } else if (nHeight < 300000) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight < 600000) {
+        nSubsidy = 35 * COIN;
+    } else if (nHeight < 900000) {
+        nSubsidy = 30 * COIN;
+    } else if (nHeight < 1200000) {
+        nSubsidy = 25 * COIN;
+    } else if (nHeight < 8749920) {
+        nSubsidy = 20 * COIN;
     } else {
         nSubsidy = 0;
     }
@@ -1796,10 +1804,16 @@ CAmount GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
     CAmount nSubsidy = STATIC_POS_REWARD;
 
     // First 100,000 blocks double stake for masternode ready
-    if (nHeight < 100000) {
-        nSubsidy = 2 * COIN;
-    } else if (nHeight < 30000000) {
-        nSubsidy = 1 * COIN;
+    if (nHeight < 300000) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight < 600000) {
+        nSubsidy = 35 * COIN;
+    } else if (nHeight < 900000) {
+        nSubsidy = 30 * COIN;
+    } else if (nHeight < 1200000) {
+        nSubsidy = 25 * COIN;
+    } else if (nHeight < 8749920) {
+        nSubsidy = 20 * COIN;
     } else {
         nSubsidy = 0;
     }
@@ -1813,7 +1827,7 @@ CAmount GetMasternodePosReward(int nHeight, CAmount blockValue)
     if (nHeight >= POS_REWARD_CHANGED_BLOCK || IsTestNet()) {
         ret = blockValue * 0.2; //20% for masternode
     } else {
-        ret = blockValue * 0.4; //40% for masternode
+        ret = blockValue * 0.7; //70% for masternode
     }
     return ret;
 }
